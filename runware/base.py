@@ -1105,7 +1105,7 @@ class RunwareBase:
 
         :raises: An error message if the connection cannot be established due to an invalid API key or other reasons.
         """
-        isConnected = self.connected() and self._ws.open
+        isConnected = self.connected() and self._ws.state == State.OPEN
         # print(f"Is connected: {isConnected}")
 
         try:
